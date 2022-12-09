@@ -1,0 +1,30 @@
+# Advent of Code 2022
+
+Trying to do these with just bash, jq, and typical bash utilities. I like having things packaged up in a nice, neat docker image so that it can be run without having to install anything in particular. It also nicely documents the exact dependencies and versions.
+
+## Build
+
+    docker build . -t aoc22
+
+## Run tests
+
+    docker run aoc22 test
+
+## Run puzzle for day/part
+
+    docker run -i aoc22 <day> <part> < <input_file>
+
+So, to run day 5 part 2 against the data contained in src/inputs/day5.txt, run
+
+    docker run -i aoc22 5 2 < src/inputs/day5.txt
+
+## Run, interactively
+
+For development, I'm often running individual scripts with entr or whatever, and getting into the shell (`-o vi` is because I like vi mode for bash) is easily done with:
+
+    docker build . -t aoc22 && docker run -it --entrypoint /bin/bash --volume `pwd`:/adventofcode aoc22 -o vi
+
+From here, I'll usually run something like
+
+    find | entr ./src/temp.bash  # I'll put in-progress stuff in temp.bash
+    find | entr bats test/day5.bats
