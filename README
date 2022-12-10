@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-Trying to do these with just bash, jq, and typical bash utilities. I like having things packaged up in a nice, neat docker image so that it can be run without having to install anything in particular. It also nicely documents the exact dependencies and versions.
+Trying to do these with just bash, jq, and typical bash utilities. I like having things packaged up in a nice, neat docker image so that it can be run without having to install anything in particular. It also nicely documents the exact dependencies and versions that I was using when I wrote this (not that I think this is particularly dependent on any versions in particular).
 
 ## Build
 
